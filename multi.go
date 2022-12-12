@@ -88,12 +88,11 @@ type partialClientConn struct {
 }
 
 // UpdateState updates the state of the ClientConn appropriately.
-func (cc *partialClientConn) UpdateState(s resolver.State) error {
+func (cc *partialClientConn) UpdateState(s resolver.State) {
 	cc.mtx.Lock()
 	cc.state = s
 	cc.mtx.Unlock()
 	cc.parent.updateState()
-	return nil
 }
 
 // ReportError notifies the ClientConn that the Resolver encountered an

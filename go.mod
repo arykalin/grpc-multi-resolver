@@ -1,8 +1,10 @@
 module github.com/Jille/grpc-multi-resolver
 
-go 1.17
+go 1.18
 
-require google.golang.org/grpc v1.44.0
+replace google.golang.org/grpc => google.golang.org/grpc v1.29.0
+
+require google.golang.org/grpc v1.27.0
 
 require (
 	github.com/golang/protobuf v1.4.3 // indirect
